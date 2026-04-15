@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Car Vision</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body{
+background:linear-gradient(135deg,#0f0f0f,#1c1c1c,#111);
+font-family:'Segoe UI',sans-serif;
+color:#fff;
+}
+.navbar{
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(10px);
+}
+.navbar-brand{
+color:#d4af37!important;
+font-weight:700;
+font-size:24px;
+}
+.section-title{
+text-align:center;
+margin:70px 0 50px;
+font-size:40px;
+font-weight:"י700";
+background:linear-gradient(to right,#d4af37,#fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.card{
+background:rgba(255,255,255,.05);
+border-radius:18px;
+border:1px solid rgba(255,255,255,.08);
+overflow:hidden;
+transition:.4s;
+box-shadow:0 15px 40px rgba(0,0,0,.6);
+height:100%;
+}
+.card:hover{
+transform:translateY(-12px);
+box-shadow:0 25px 60px rgba(212,175,55,.4);
+}
+.card img{
+height:230px;
+object-fit:cover;
+transition:.5s;
+}
+.card:hover img{
+transform:scale(1.08);
+}
+.card-body{
+text-align:center;
+}
+.card-title{
+color:#d4af37;
+font-weight:600;
+margin-bottom:15px;
+}
+.btn-view{
+background:linear-gradient(to right,#d4af37,#b8860b);
+border:none;
+color:#000;
+font-weight:600;
+border-radius:30px;
+}
+.btn-view:hover{
+background:linear-gradient(to right,#e5c158,#c7920e);
+box-shadow:0 0 20px rgba(212,175,55,.7);
+}
+.modal-content{
+background:#1a1a1a;
+border:2px solid #d4af37;
+color:#fff;
+border-radius:18px;
+}
+.modal-title{color:#d4af37;}
+.modal-body img{
+width:100%;
+border-radius:12px;
+margin-bottom:20px;
+border:3px solid #d4af37;
+}
+.detail-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+.detail-item{
+background:rgba(255,255,255,.05);
+padding:12px;
+border-left:4px solid #d4af37;
+border-radius:10px;
+}
+.modal-price{
+grid-column:span 2;
+text-align:center;
+font-size:22px;
+font-weight:bold;
+color:#d4af37;
+border-top:2px solid #d4af37;
+padding-top:12px;
+margin-top:10px;
+}
+.footer{
+text-align:center;
+margin:60px 0 20px;
+padding:20px;
+border-top:1px solid #333;
+color:#aaa;
+}
+@media(max-width:768px){
+.detail-grid{grid-template-columns:1fr;}
+.modal-price{grid-column:span 1;}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="#"><i class="bi bi-gem me-2"></i>Luxury Car Vision</a>
+</div>
+</nav>
+
+<div class="container">
+<h2 class="section-title">Our Premium Collection</h2>
+<div class="row g-4">
+
+<!-- CAR 1 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car1.jpg" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">BMW M4 Competition</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car1">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 2 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car2.webp" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Audi R8 V10</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car2">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 3 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car3.avif" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Mercedes AMG GT</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car3">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 4 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car4.jpg" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Lamborghini Huracan</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car4">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 5 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car5.webp" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Ferrari F8 Tributo</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car5">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 6 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car6.webp" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Porsche 911</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car6">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 7 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car7.jpg" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Rolls Royce Phantom</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car7">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 8 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car8.webp" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Bentley Continental GT</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car8">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 9 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car9.webp" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Bugatti Chiron</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car9">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 10 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car10.jpg" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Toyota Supra</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car10">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 11 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car11.avif" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Nissan GT-R</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car11">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 12 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car12.webp" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Ford Mustang GT</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car12">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 13 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car13.jpg" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Chevrolet Camaro ZL1</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car13">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 14 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car14.webp" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Aston Martin DB11</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car14">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 15 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car15.webp" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Maserati MC20</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car15">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 16 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car16.jpg" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Jaguar F-Type R</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car16">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 17 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car17.avif" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">McLaren 720S</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car17">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 18 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car18.webp" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Tesla Model S Plaid</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car18">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 19 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car19.avif" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Range Rover Sport SV</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car19">View Details</button>
+</div>
+</div>
+</div>
+
+<!-- CAR 20 -->
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<img src="images/car20.jpg" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Hyundai Ioniq 5 N</h5>
+<button class="btn btn-view w-100" data-bs-toggle="modal" data-bs-target="#car20">View Details</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+© 2026 Luxury Car Vision | Designed By Tirth Gediya
+</div>
+
+<!-- MODAL 1 -->
+
+<div class="modal fade" id="car1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">BMW M4 Competition</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car1.jpg">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>3.0L Twin Turbo</div></div>
+<div class="detail-item"><strong>Power</strong><div>503 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>3.8 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>290 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>8-speed Automatic</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹1.20 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 2  -->
+<div class="modal fade" id="car2">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Audi R8 V10</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car2.webp">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>5.2L V10</div></div>
+<div class="detail-item"><strong>Power</strong><div>602 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>3.2 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>330 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>7-Speed Automatic_DC</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>AWD</div></div>
+<div class="modal-price">₹2.30 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 3  -->
+<div class="modal fade" id="car3">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Mercedes AMG GT</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car3.avif">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>4.0L V8</div></div>
+<div class="detail-item"><strong>Power</strong><div>577 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>3.6 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>315 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>7-Speed Dual Clutch</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹2.50 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 4  -->
+<div class="modal fade" id="car4">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Lamborghini Huracan</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car4.jpg">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>5.2L V10</div></div>
+<div class="detail-item"><strong>Power</strong><div>630 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>2.9 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>325 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>7-Speed Dual Clutch</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>AWD</div></div>
+<div class="modal-price">₹4.00 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 5  -->
+<div class="modal fade" id="car5">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Ferrari F8 Tributo</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car5.webp">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>3.9L Twin Turbo V8</div></div>
+<div class="detail-item"><strong>Power</strong><div>710 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>2.8 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>340 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>7-Speed DCT</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹4.50 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 6  -->
+<div class="modal fade" id="car6">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Porsche 911</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car6.webp">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>3.0L Twin Turbo</div></div>
+<div class="detail-item"><strong>Power</strong><div>443 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>3.5 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>308 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>8-Speed PDK</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹1.90 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 7  -->
+<div class="modal fade" id="car7">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Rolls Royce Phantom</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car7.jpg">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>6.75L V12</div></div>
+<div class="detail-item"><strong>Power</strong><div>563 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>5.1 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>250 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>8-Speed Automatic</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹8.99 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 8  -->
+<div class="modal fade" id="car8">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Bentley Continental GT</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car8.webp">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>6.0L W12</div></div>
+<div class="detail-item"><strong>Power</strong><div>650 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>3.7 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>335 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>8-Speed Dual Clutch</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>AWD</div></div>
+<div class="modal-price">₹5.23 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 9  -->
+<div class="modal fade" id="car9">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Bugatti Chiron</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car9.webp">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>8.0L Quad Turbo W16</div></div>
+<div class="detail-item"><strong>Power</strong><div>1479 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>2.4 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>420 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>7-Speed DCT</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>AWD</div></div>
+<div class="modal-price">₹19.00 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 10  -->
+<div class="modal fade" id="car10">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Toyota SupraEFR</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car10.jpg">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>3.0L Turbo</div></div>
+<div class="detail-item"><strong>Power</strong><div>382 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>4.1 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>250 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>8-Speed Automatic</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹85 Lakh</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 11  -->
+<div class="modal fade" id="car11">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Nissan GT-R</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car11.avif">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>3.8L Twin Turbo V6</div></div>
+<div class="detail-item"><strong>Power</strong><div>565 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>2.9 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>315 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>6-Speed DCT</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>AWD</div></div>
+<div class="modal-price">₹2.12 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 12  -->
+<div class="modal fade" id="car12">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Ford Mustang GT</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car12.webp">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>5.0L V8</div></div>
+<div class="detail-item"><strong>Power</strong><div>450 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>4.3 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>250 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>6-Speed Manual</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹74 Lakh</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 13  -->
+<div class="modal fade" id="car13">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Chevrolet Camaro ZL1</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car13.jpg">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>6.2L Supercharged V8</div></div>
+<div class="detail-item"><strong>Power</strong><div>650 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>3.5 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>320 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>10-Speed Automatic</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹1.20 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 14  -->
+<div class="modal fade" id="car14">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Aston Martin DB11</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car14.webp">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>4.0L Twin Turbo V8</div></div>
+<div class="detail-item"><strong>Power</strong><div>503 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>4.0 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>300 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>8-Speed Automatic</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹3.29 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 15  -->
+<div class="modal fade" id="car15">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Maserati MC20</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car15.webp">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>3.0L Twin Turbo V6</div></div>
+<div class="detail-item"><strong>Power</strong><div>621 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>2.9 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>325 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>8-Speed DCT</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹3.65 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 16  -->
+<div class="modal fade" id="car16">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Jaguar F-Type R</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car16.jpg">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>5.0L Supercharged V8</div></div>
+<div class="detail-item"><strong>Power</strong><div>575 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>3.7 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>300 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>8-Speed Automatic</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>AWD</div></div>
+<div class="modal-price">₹1.50 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 17  -->
+<div class="modal fade" id="car17">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">McLaren 720S</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car17.avif">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>4.0L Twin Turbo V8</div></div>
+<div class="detail-item"><strong>Power</strong><div>710 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>2.8 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>341 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>7-Speed DCT</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>RWD</div></div>
+<div class="modal-price">₹4.65 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 18  -->
+<div class="modal fade" id="car18">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Tesla Model S Plaid</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car18.webp">
+<div class="detail-grid">
+<div class="detail-item"><strong>Battery</strong><div>100 kWh</div></div>
+<div class="detail-item"><strong>Power</strong><div>1020 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>2.1 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>322 km/h</div></div>
+<div class="detail-item"><strong>Range</strong><div>637 km</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>AWD</div></div>
+<div class="modal-price">₹1.60 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 19  -->
+<div class="modal fade" id="car19">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Range Rover Sport SV</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car19.avif">
+<div class="detail-grid">
+<div class="detail-item"><strong>Engine</strong><div>4.4L Twin Turbo V8</div></div>
+<div class="detail-item"><strong>Power</strong><div>626 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>3.8 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>290 km/h</div></div>
+<div class="detail-item"><strong>Transmission</strong><div>8-Speed Automatic</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>AWD</div></div>
+<div class="modal-price">₹2.20 Crore</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--  MODAL 20  -->
+<div class="modal fade" id="car20">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Hyundai Ioniq 5 N</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="images/car20.jpg">
+<div class="detail-grid">
+<div class="detail-item"><strong>Battery</strong><div>84 kWh</div></div>
+<div class="detail-item"><strong>Power</strong><div>641 HP</div></div>
+<div class="detail-item"><strong>0-100</strong><div>3.4 sec</div></div>
+<div class="detail-item"><strong>Top Speed</strong><div>260 km/h</div></div>
+<div class="detail-item"><strong>Range</strong><div>448 km</div></div>
+<div class="detail-item"><strong>Drivetrain</strong><div>AWD</div></div>
+<div class="modal-price">₹65 Lakh</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
