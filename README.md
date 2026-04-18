@@ -4,7 +4,7 @@ A modern and visually appealing luxury car showcase website built using HTML, CS
 
 🌐 Live Demo
 
-🔗 https://tirthgediya.github.io/luxury-car-vision/
+🔗 https://Tirthgediya.github.io/luxury-car-vision/
 
 📌 Features
 🚘 Home page with luxury branding and visuals
@@ -36,7 +36,7 @@ luxury-car-vision/
 To run this project locally:
 
 Clone the repository
-git clone https://github.com/your-username/luxury-car-vision.git
+git clone https://github.com/Tirthgediya/luxury-car-vision.git
 
 Navigate to the project folder
 cd luxury-car-vision
@@ -62,7 +62,7 @@ Mobile devices (can be further improved)
 
 Tirth Gediya
 
-GitHub: https://github.com/your-username
+GitHub: https://github.com/Tirthgediya
 
 📄 License
 
